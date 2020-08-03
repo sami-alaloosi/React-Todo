@@ -11,7 +11,6 @@ class TodoList extends React.Component {
 
 
 render(){
-    console.log(this.props.todoList) // delet this later 
     return (
 
        <div>

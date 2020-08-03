@@ -1,7 +1,7 @@
 import React from 'react';
 
 import TodoList from "./components/TodoList"
-
+import TodoForm from "./components/TodoForm"
 
 
  let todoListInitialValue = [
@@ -26,10 +26,23 @@ state = {
   todoListValue: [...todoListInitialValue]
 }
 
+addItem = (taskName) => {
+  const newItem = {
+    task: taskName,
+    id: new Date(),
+    completed: false
+  }
+
+  this.setState({
+    todoListValue: [...this.state.todoListValue, newItem ]
+  })
+}
+
   render() {
     return (
       <div>
         <TodoList todoList={this.state.todoListValue} />
+        <TodoForm  addItem={this.addItem}/>
       </div>
     );
   }
