@@ -38,10 +38,22 @@ addItem = (taskName) => {
   })
 }
 
+toggleItem = id => {
+  this.setState({
+    todoListValue: this.state.todoListValue.map(item =>{
+     return item.id === id ? {...item, completed: !item.completed } : item
+    })
+  })
+}
+
   render() {
     return (
       <div>
-        <TodoList todoList={this.state.todoListValue} />
+        <TodoList
+          todoList={this.state.todoListValue}
+          toggleItme={this.toggleItem}
+          />
+
         <TodoForm  addItem={this.addItem}/>
       </div>
     );

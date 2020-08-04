@@ -11,6 +11,7 @@ class TodoList extends React.Component {
 
 
 render(){
+    console.log(this.props.toggleItme)
     return (
 
        <div>
@@ -18,6 +19,7 @@ render(){
                this.props.todoList.map(item => <Todo
                 item={item}
                 key={item.id}
+                toggleItem ={this.props.toggleItme}
                  />)
            }
        </div>
