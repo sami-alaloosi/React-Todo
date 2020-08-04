@@ -46,6 +46,12 @@ toggleItem = id => {
   })
 }
 
+deletItem = () => {
+  this.setState({
+    todoListValue: this.state.todoListValue.filter( item => item.completed === false)
+  })
+}
+
   render() {
     return (
       <div>
@@ -54,7 +60,10 @@ toggleItem = id => {
           toggleItme={this.toggleItem}
           />
 
-        <TodoForm  addItem={this.addItem}/>
+        <TodoForm
+          addItem={this.addItem}
+          deletItem={this.deletItem}
+          />
       </div>
     );
   }
